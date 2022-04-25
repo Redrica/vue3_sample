@@ -1,5 +1,18 @@
+const array = ['котик', 'ластик', 'головастик', 'ужастик', 'олово', 'отит', 'жаба'];
+
 const getEventCount = (value) => {
-  const array = ['котик', 'ластик', 'головастик', 'ужастик', 'олово', 'отит', 'жаба'];
   return array.filter((item) => item.includes(value)).length;
 }
-export default { getEventCount };
+
+// дла асинхронного вызова
+const getEventCountAsync = (value) => {
+  // eslint-disable-next-line no-unused-vars
+  return new Promise((resolve, reject) => {
+    const result = array.filter((item) => item.includes(value)).length;
+    setTimeout(() => {
+      resolve(result);
+    }, 3000);
+  })
+}
+
+export default { getEventCount, getEventCountAsync };
