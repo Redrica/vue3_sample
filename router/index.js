@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory} from 'vue-router';
 import StartScreen from '../src/components/pages/StartScreen';
-import VideoSetup from '../src/components/pages/VideoSetup';
-import VideoMethods from '../src/components/pages/VideoMethods';
+import VideoSetupMethodsComputed from '../src/components/pages/VideoSetupMethodsComputed';
 import VideoReactiveSyntax from '../src/components/pages/VideoReactiveSyntax';
 import VideoModularizing from '../src/components/pages/VideoModularizing';
-import VideoHooks from '../src/components/pages/VideoHooks';
 import VideoWatch from '../src/components/pages/VideoWatch';
 import VideoSharingState from '../src/components/pages/VideoSharingState';
 import VideoSuspense from '../src/components/pages/VideoSuspense';
@@ -14,16 +12,12 @@ const routes = [
   {
     path: '/',
     component: StartScreen,
+    title: 'Start Screen'
   },
   {
     path: '/setup',
-    component: VideoSetup,
-    title: 'About Setup function',
-  },
-  {
-    path: '/methods',
-    component: VideoMethods,
-    title: 'About Methods',
+    component: VideoSetupMethodsComputed,
+    title: 'About Setup function, Methods and Computed Properties',
   },
   {
     path: '/reactive-syntax',
@@ -34,11 +28,6 @@ const routes = [
     path: '/modularizing',
     component: VideoModularizing,
     title: 'About Modularizing',
-  },
-  {
-    path: '/hooks',
-    component: VideoHooks,
-    title: 'About Lifecycle Hooks',
   },
   {
     path: '/watch',

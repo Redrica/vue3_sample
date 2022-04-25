@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Video №11 – Teleport</h2>
+  <div class="screen">
+    <h2 class="screen__title">Video №11 – Teleport</h2>
   </div>
 </template>
 
