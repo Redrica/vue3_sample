@@ -21,6 +21,10 @@ body {
   box-sizing: inherit;
 }
 
+#end-of-body {
+  outline: 5px solid #4f988b;
+}
+
 .page {
   display: flex;
   flex-wrap: wrap;
