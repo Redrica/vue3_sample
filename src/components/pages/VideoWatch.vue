@@ -32,9 +32,9 @@ export default {
     // для остальных случаев watch: watch(source, fn, options?)
 
     // можно отслеживать определенное реактивное свойство и при его изменении запускать коллбэк
-    watch(searchInput, () => {
-      console.log('searchInput changed');
-    });
+    // watch(searchInput, () => {
+    //   console.log('searchInput changed');
+    // });
 
    // можно получить и использовать новое и старое значения
     watch(searchInput, (newVal, oldVal) => {

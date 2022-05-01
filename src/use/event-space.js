@@ -1,5 +1,4 @@
-// потребуется импортировать Мгу функции, чтобы использовать их
-
+// потребуется импортировать Vue функции, чтобы использовать их
 import { ref, computed } from 'vue';
 
 export default function useEventSpace () {
