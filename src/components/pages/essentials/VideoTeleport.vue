@@ -1,8 +1,5 @@
 <template>
-  <div class="screen">
-    <h2 class="screen__title">Video №11 – Teleport</h2>
-    <hr>
-
+  <div class="screen__content">
 <!--    value of "to" must be a valid DOM query selector: tag, .class, #id, [data-attribute] or reactiveProperty via :to -->
 <!--    disabled attribute responsible for teleport action: when it's true – the html stays inside parent component
 and when it is false – html will be teleported -->
@@ -11,7 +8,7 @@ and when it is false – html will be teleported -->
       This should be at the end.
 
       <video :autoplay="true" :loop="true" width="250">
-        <source src="../../../public/holemaker.webm" type="video/mp4"/>
+        <source src="../../../../public/holemaker.webm" type="video/mp4"/>
       </video>
     </teleport>
 

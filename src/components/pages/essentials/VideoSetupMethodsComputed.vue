@@ -1,20 +1,16 @@
 <template>
-  <section class="screen">
-    <h2 class="screen__title">Setup & Reactive References, Methods & Computed (Video 2, 3, 4)</h2>
-    <hr>
-    <div class="screen__content">
-<!--      В шаблоне не требуется использовать .value при обращении к значению,
- заданному через ref или computed, за нас это делает Vue -->
-<!--      <div>Capacity: {{ capacity }}</div>-->
-      <p>Spaces left: {{ spacesLeft }} out of {{ capacity }}</p>
-      <button @click="increaseCapacity">increaseCapacity</button>
+  <div class="screen__content">
+    <!--      В шаблоне не требуется использовать .value при обращении к значению,
+     заданному через ref или computed, за нас это делает Vue -->
+    <!--      <div>Capacity: {{ capacity }}</div>-->
+    <p>Spaces left: {{ spacesLeft }} out of {{ capacity }}</p>
+    <button @click="increaseCapacity">increaseCapacity</button>
 
-      <h3>Attending</h3>
-      <ul>
-        <li v-for="(item, index) in attending" :key="index">{{ item }}</li>
-      </ul>
-    </div>
-  </section>
+    <h3>Attending</h3>
+    <ul>
+      <li v-for="(item, index) in attending" :key="index">{{ item }}</li>
+    </ul>
+  </div>
 </template>
 
 <!-- Имеет смысл использовать Composition API в следующих случаях:
@@ -26,14 +22,13 @@
 
 <script>
 import { ref, computed } from 'vue';
+
 export default {
   name: 'VideoSetupMethodsComputed',
-  props: {
-
-  },
+  props: {},
   setup() {
     const capacity = ref(3);
-    const attending = ref(['Tim', 'Bob', 'Jane']);
+    const attending = ref([ 'Tim', 'Bob', 'Jane' ]);
 
     const spacesLeft = computed(() => {
       return capacity.value - attending.value.length;
@@ -45,9 +40,9 @@ export default {
     //   capacity.value ++;
     // }
     const increaseCapacity = function () {
-      capacity.value ++;
+      capacity.value++;
     }
-    return { capacity, increaseCapacity, attending, spacesLeft  };
+    return { capacity, increaseCapacity, attending, spacesLeft };
   },
 }
 </script>

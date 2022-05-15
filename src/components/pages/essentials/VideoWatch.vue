@@ -1,17 +1,13 @@
 <template>
-  <section class="screen">
-    <h2 class="screen__title">Watch и WatchEffect (Video 8)</h2>
-    <hr>
-    <div class="screen__content">
-      <p>Search for <input v-model="searchInput" /></p>
-      <p>Number of events: {{ results }}</p>
-    </div>
-  </section>
+  <div class="screen__content">
+    <p>Search for <input v-model="searchInput"/></p>
+    <p>Number of events: {{ results }}</p>
+  </div>
 </template>
 
 <script>
 import { ref, watch, watchEffect } from 'vue';
-import eventApi from '../../api/event.js';
+import eventApi from '../../../api/event.js';
 
 export default {
   name: 'VideoWatch',
@@ -36,7 +32,7 @@ export default {
     //   console.log('searchInput changed');
     // });
 
-   // можно получить и использовать новое и старое значения
+    // можно получить и использовать новое и старое значения
     watch(searchInput, (newVal, oldVal) => {
       console.log('searchInput changed, was ', oldVal, ' become ', newVal);
     });
@@ -47,7 +43,6 @@ export default {
     // watch([searchInput, results], ([newVal1, oldVal1], [newVal2, oldVal2]) => {
     //   console.log(newVal1, newVal2, oldVal1, oldVal2);
     // });
-
 
 
     return { searchInput, results };

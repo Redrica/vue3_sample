@@ -1,20 +1,16 @@
 <template>
-  <div class="screen">
-    <h2 class="screen__title">Video №9 – Sharing State</h2>
-    <hr>
     <div class="screen__content">
       <p>Search for <input v-model="searchInput" /></p>
       <p :style="{ color: loading ? 'green' : 'blue' }">Loading: {{ loading }}</p>
       <p>Error: {{ error }}</p>
       <p>Number of events: {{ results }}</p>
     </div>
-  </div>
 </template>
 
 <script>
 import { ref, watch } from 'vue';
-import eventApi from '../../api/event.js';
-import usePromise from '../../use/use-promise';
+import eventApi from '../../../api/event.js';
+import usePromise from '../../../use/use-promise';
 
 export default {
   name: 'VideoSharingState',

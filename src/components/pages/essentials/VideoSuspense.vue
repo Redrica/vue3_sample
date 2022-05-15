@@ -1,8 +1,5 @@
 <template>
-  <div class="screen">
-    <h2 class="screen__title">Video №10 – Suspense</h2>
-    <hr>
-
+  <div class="screen__content">
     <div v-if="error">Uh oh damn ... {{ error }}</div>
     <Suspense v-else>
       <template #default>
@@ -21,7 +18,7 @@
 
 <script>
 import { ref, onErrorCaptured } from 'vue';
-import AsyncSetupComponent from '../AsyncSetupComponent';
+import AsyncSetupComponent from '../../AsyncSetupComponent';
 
 export default {
   name: 'VideoSuspense',

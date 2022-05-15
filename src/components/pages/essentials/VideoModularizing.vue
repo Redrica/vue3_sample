@@ -1,35 +1,29 @@
 <template>
-  <section class="screen">
-    <h2 class="screen__title">Modularizing (Video 6)</h2>
-    <hr>
-    <div class="screen__content">
-      <p>Spaces left: {{ spacesLeft }} out of {{ capacity }}</p>
-      <button @click="increaseCapacity">increaseCapacity</button>
+  <div class="screen__content">
+    <p>Spaces left: {{ spacesLeft }} out of {{ capacity }}</p>
+    <button @click="increaseCapacity">increaseCapacity</button>
 
-      <h3>Attending</h3>
-      <ul>
-        <li v-for="(item, index) in attending" :key="index">{{ item }}</li>
-      </ul>
-    </div>
-  </section>
+    <h3>Attending</h3>
+    <ul>
+      <li v-for="(item, index) in attending" :key="index">{{ item }}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
 // import { ref, computed } from 'vue';
 // ПЕРЕИСПОЛЬЗОВАНИЕ
-import useEventSpace from '../../use/event-space';
+import useEventSpace from '../../../use/event-space';
 
 export default {
   name: 'VideoModularizing',
-  props: {
-
-  },
+  props: {},
   setup() {
-   return useEventSpace();
+    return useEventSpace();
 
-  // если мы импортируем и используем несколько composition function, то возвращать их надо
-  // через деструктуризацию:
-  // return { ...useEventSpace(), ...anotherCompositionFunction(), }
+    // если мы импортируем и используем несколько composition function, то возвращать их надо
+    // через деструктуризацию:
+    // return { ...useEventSpace(), ...anotherCompositionFunction(), }
   },
 }
 

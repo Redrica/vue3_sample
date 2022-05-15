@@ -11,11 +11,7 @@
 <!--          <p>Count from store is {{ store.count }}</p>-->
 <!--          <button @click="store.increment">Increase count</button>-->
 <!--        </div>-->
-<!--        <ul class="screen__nav navigation">-->
-<!--          <li class="navigation__item" v-for="(item, index) in routes" :key="index">-->
-<!--            <router-link class="navigation__link link" :to="item.path">{{ item.title }}</router-link>-->
-<!--          </li>-->
-<!--        </ul>-->
+
         <router-view class="page__route route"/>
       </div>
     </div>

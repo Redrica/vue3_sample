@@ -51,6 +51,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 25px 50px;
 
     &__title {
       position: relative;

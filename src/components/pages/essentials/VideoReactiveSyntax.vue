@@ -1,40 +1,35 @@
 <template>
-  <section class="screen">
-    <h2 class="screen__title">The Reactive Syntax (Video 5)</h2>
-    <hr>
-    <div class="screen__content">
-      <p>Spaces left: {{ spacesLeft }} out of {{ capacity }}</p>
-      <button @click="increaseCapacity">increaseCapacity</button>
+  <div class="screen__content">
+    <p>Spaces left: {{ spacesLeft }} out of {{ capacity }}</p>
+    <button @click="increaseCapacity">increaseCapacity</button>
 
-      <h3>Attending</h3>
-      <ul>
-        <li v-for="(item, index) in attending" :key="index">{{ item }}</li>
-      </ul>
-    </div>
-  </section>
+    <h3>Attending</h3>
+    <ul>
+      <li v-for="(item, index) in attending" :key="index">{{ item }}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
 import { reactive, computed, toRefs } from 'vue';
+
 export default {
   name: 'VideoReactiveSyntax',
-  props: {
-
-  },
+  props: {},
   setup() {
     // таким образом мы сразу создаём объект с реактивными свойствами, в нем же можно задать
-    // вычисляемое свойство. После чего уже не понядобится брать value каждого свойства, тк
+    // вычисляемое свойство. После чего уже не понадобится брать value каждого свойства, тк
     // всё лежит внутри одного реактивного объекта
     const event = reactive({
       capacity: 4,
-      attending: ['Tim', 'Bob', 'Jane'],
+      attending: [ 'Tim', 'Bob', 'Jane' ],
       spacesLeft: computed(() => {
         return event.capacity - event.attending.length;
       })
     })
 
     const increaseCapacity = function () {
-      event.capacity ++;
+      event.capacity++;
     }
     // в случае использования реактивного объекта экспортируется весь он
     // return { event, increaseCapacity, };

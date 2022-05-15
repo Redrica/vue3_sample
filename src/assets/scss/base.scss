@@ -8,7 +8,7 @@ body {
   font-size: 14px;
   line-height: 22px;
   font-family: 'Bahnschrift', sans-serif;
-  color: #272727;
+  color: $black;
 
   & > div {
     height: 100%;
@@ -21,10 +21,6 @@ body {
   box-sizing: inherit;
 }
 
-#end-of-body {
-  //outline: 5px solid #4f988b;
-}
-
 .page {
   background-image: linear-gradient(to right, $v-gray 5%, $v-green, $v-gray 95%);
 
@@ -34,7 +30,6 @@ body {
     width: 1024px;
     height: 100vh;
     margin: 0 auto;
-    // box-shadow: 0 0 50px transparentize($black, 0.5);
   }
 
   &__content {
@@ -71,7 +66,7 @@ body {
   }
 
   &__nav {
-    margin: 0 0 20px;
+    margin: 0 0 15px;
   }
 
   &__route {
@@ -127,13 +122,13 @@ body {
 .navigation {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 25px 0 0 20px;
   list-style: none;
-  border-right: 2px solid #4f988b;
 
   &__item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding: 0 15px 0 0;
+    background-color: $white;
+    border-radius: 2px;
   }
 }
 
@@ -142,8 +137,9 @@ body {
   flex-direction: column;
 
   &__title {
-    margin: 0 0 15px;
-    padding: 0 0 0 25px;
+    margin: 0;
+    padding: 20px 25px;
+    border-bottom: 2px solid $green;
   }
 
   &__content {
@@ -153,14 +149,16 @@ body {
 
 .link {
   text-decoration: none;
-  color: #4f988b;
+  color: $v-gray;
+  transition: 0.3s;
 
   &:hover {
-    color: #1ed0af;
+    color: $v-green;
   }
 
-  &.router-link-active {
-    color: #00c9a5;
+  &.router-link-exact-active {
+    color: $v-green;
+    cursor: default;
   }
 }
 
@@ -172,6 +170,5 @@ hr {
 }
 
 .route {
-  padding: 25px 50px;
   //border: 10px solid transparentize(#004d42, 0.25);
 }
