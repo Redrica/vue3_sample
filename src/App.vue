@@ -1,5 +1,5 @@
 <template>
-  <MainPage msg="Welcome to Vue 3. Essential knowledge"/>
+  <MainPage />
 </template>
 
 <script>
