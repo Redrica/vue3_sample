@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e5fe0"],{"979e":function(e){e.exports=JSON.parse('[{"name":"Point #1","age":22},{"name":"Point #2","age":25},{"name":"Point #3","age":19},{"name":"Point #4","age":31},{"name":"Point #5","age":27}]')}}]);
+//# sourceMappingURL=chunk-2d0e5fe0.4cc6eab2.js.map
