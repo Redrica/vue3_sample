@@ -4,11 +4,9 @@
     <component v-if="currentPage" class="screen__content" :is="currentPage" />
     <div v-else class="screen__content">Please select from left menu…</div>
   </section>
-
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 

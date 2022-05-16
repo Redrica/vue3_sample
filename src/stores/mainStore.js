@@ -28,7 +28,7 @@ export const useMainStore = defineStore('mainStore', { // it is a convention to 
   // определяется как функция, возвращающая объект стейта, это позволяет работать и на сервере и на клиенте (как связано? Оо)
   state: () => {
     return {
-      name: 'Elizabeth',
+      name: 'Pipipinia',
       count: 0,
       // pointsArray: pointsArray,
       pointsArray: [],

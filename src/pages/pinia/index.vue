@@ -1,29 +1,30 @@
 <template>
-  <div>
-    <h2>Start screen. Welcome to Pinia</h2>
-    <hr>
-    <p>{{ store.name }}</p>
+  <section class="screen">
+    <h2 class="screen__title">Welcome to Pinia – the new default state management library for Vue</h2>
 
-    <p>Count value in store is {{ count }}</p>
-<!--    можно получать доступ через точку, если экспортируется весь стейт -->
-    <p>Count value in store is {{ store.count }} – via exported store</p>
-    <button @click="increment">Increase count</button>
-    <button @click="onButtonClick">Increase count by direct access</button>
-    <button @click="resetState">Reset state</button>
-    <button @click="storePatch">storePatch</button>
-    <button @click="storePatchByFunc">storePatchByFunc</button>
-    <button @click="replaceState">replace state</button>
-    <h1>We have {{ store.pointsCount }} points here and a magic number – {{ store.magicNumber }}</h1>
-    <h1>From getter with argument: {{ store.getPointByAge(store.name) }}</h1>
-    <h1>Several stores: {{ store.getValueFromOtherStore }}</h1>
-    <button @click="store.randomizeCounter">Make random count</button>
-    <button @click="store.actionFromOtherStore">Dispatch action from other store</button>
+    <div class="screen__content">
+      <p>{{ store.name }}</p>
 
-    <ul>
-      <li v-for="(point, index) in pointsArray" :key="`00${index}`">{{ point.name }} – {{ point.age }} y.o.</li>
-    </ul>
+      <p>Count value in store is {{ count }}</p>
+      <!--    можно получать доступ через точку, если экспортируется весь стейт -->
+      <p>Count value in store is {{ store.count }} – via exported store</p>
+      <button @click="increment">Increase count</button>
+      <button @click="onButtonClick">Increase count by direct access</button>
+      <button @click="resetState">Reset state</button>
+      <button @click="storePatch">storePatch</button>
+      <button @click="storePatchByFunc">storePatchByFunc</button>
+      <button @click="replaceState">replace state</button>
+      <h1>We have {{ store.pointsCount }} points here and a magic number – {{ store.magicNumber }}</h1>
+      <h1>From getter with argument: {{ store.getPointByAge(store.name) }}</h1>
+      <h1>Several stores: {{ store.getValueFromOtherStore }}</h1>
+      <button @click="store.randomizeCounter">Make random count</button>
+      <button @click="store.actionFromOtherStore">Dispatch action from other store</button>
 
-  </div>
+      <ul>
+        <li v-for="(point, index) in pointsArray" :key="`00${index}`">{{ point.name }} – {{ point.age }} y.o.</li>
+      </ul>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -32,7 +33,7 @@ import { storeToRefs } from 'pinia';
 import { onMounted } from 'vue';
 
 export default {
-  name: 'StartScreen',
+  name: 'index',
   // если используется Options API, то можно использовать хук setup просто чтобы там объявить стейт в компоненте, чтобы к нему потом обращаться.
   // setup() {
   //    const store = useMyStore();

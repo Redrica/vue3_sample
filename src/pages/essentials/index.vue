@@ -11,10 +11,6 @@
       </ul>
       <router-view class="page__route route"/>
     </div>
-
-    <div id="end-of-body" class="essentials__footer">
-      This is the last tag on the page.
-    </div>
   </section>
 </template>
 
@@ -51,10 +47,6 @@ export default {
       margin: 0;
       padding: 25px 0 0 25px;
       border-right: 2px solid #4f988b;
-    }
-
-    &__footer {
-
     }
   }
 </style>

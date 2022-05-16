@@ -25,6 +25,9 @@ and when it is false – html will be teleported -->
     <button @click="isTeleported = !isTeleported">{{ `${isTeleported ? 'Bring first back' : 'Teleport first!' }` }}</button>
     <button @click="isTeleportedToo = !isTeleportedToo">{{ `${isTeleportedToo ? 'Bring second back' : 'Teleport second!' }` }}</button>
 
+    <div id="end-of-body" class="screen__footer">
+      This is the last tag on the page.
+    </div>
   </div>
 </template>
 
