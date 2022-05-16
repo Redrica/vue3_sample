@@ -3,7 +3,7 @@
     <div class="essentials__content">
       <ul class="essentials__nav navigation">
         <li class="navigation__item" v-for="(item, index) in innerRoutes" :key="index">
-          <router-link class="navigation__link link" :to="`/essentials/${item.path}`">{{
+          <router-link class="navigation__link link" :to="`${baseURL}essentials/${item.path}`">{{
               item.title
             }}
           </router-link>
@@ -22,9 +22,11 @@ export default {
   name: 'index',
 
   setup() {
+    const baseURL = process.env.NODE_ENV === 'production' ? '/vue3_sample/' : '/'
+
     const innerRoutes = computed(() => routes.find((item) => item.name === 'essentials').children);
 
-    return { innerRoutes }
+    return { baseURL, innerRoutes }
   },
 }
 </script>

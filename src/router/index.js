@@ -5,14 +5,16 @@ import PiniaPart from '../pages/pinia';
 
 import EssentialPage from '../components/pages/essentials/EssentialPage';
 
+const baseURL = process.env.NODE_ENV === 'production' ? '/vue3_sample/' : '/'
+
 const routes = [
   {
-    path: '/',
+    path: baseURL,
     component: HomePage,
     title: 'Start Screen'
   },
   {
-    path: '/essentials',
+    path: `${baseURL}essentials`,
     name: 'essentials',
     component: EssentialsPart,
     title: 'Vue 3: essentials',
@@ -66,7 +68,7 @@ const routes = [
     ],
   },
   {
-    path: '/pinia',
+    path: `${baseURL}pinia`,
     component: PiniaPart,
     title: 'Pinia via docs'
   },
