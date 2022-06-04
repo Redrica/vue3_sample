@@ -6,8 +6,10 @@
       <p>{{ store.name }}</p>
 
       <p>Count value in store is {{ count }}</p>
+      <p>String from array pointsArray is {{ stringFromArray }}</p>
       <!--    можно получать доступ через точку, если экспортируется весь стейт -->
       <p>Count value in store is {{ store.count }} – via exported store</p>
+      <button @click="pushToArray">Push to PointsArray (induces the error)</button>
       <button @click="increment">Increase count</button>
       <button @click="onButtonClick">Increase count by direct access</button>
       <button @click="resetState">Reset state</button>
@@ -30,7 +32,7 @@
 <script>
 import { useMainStore } from '../../stores/mainStore';
 import { storeToRefs } from 'pinia';
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 
 export default {
   name: 'index',
@@ -52,10 +54,27 @@ export default {
     // no destructuring!!! It breaks reactivity. NO → const { count, pointsArray } = store;
 
     // если нужно взять конкретные свойства из стора, то деструктурировать надо с использованием функции storeToRefs(store),
-    // это создаст ссылку на все реактивные свойства
+    // это создаст ссылку на все реактивные свойства, обращение будет через .VALUE!
     const { count, pointsArray } = storeToRefs(store);
     // но при этом через деструктуризацию можно брать экшены
     const { increment } = store;
+
+    const stringFromArray = computed(() => {
+      let string = '';
+      pointsArray.value.forEach((item) => {
+        string += item.age
+      });
+
+      return string;
+    });
+
+    // НЕ СРАБОТАЕТ ↓. Можно менять стор напрямую только если обращаться к нему через store.property,
+    // а если property получено через storeToRefs – то это уже новый прокси объект
+
+    const pushToArray = pointsArray.value.push({
+      name: `Point #${pointsArray.value.length + 1}`,
+      age: 18 + Math.round(Math.random() * 10),
+    })
 
     // можно напрямую изменять стор без экшенов
     const onButtonClick = () => store.count ++;
@@ -119,7 +138,7 @@ export default {
 
     // TODO: разобрать при необходимости, пока выглядит не сильно нужным, возможно для дебага полезно.
 
-    return { store, count, pointsArray, increment, onButtonClick, resetState, storePatch, storePatchByFunc, replaceState };
+    return { store, count, pointsArray, increment, onButtonClick, resetState, storePatch, storePatchByFunc, replaceState, stringFromArray, pushToArray };
   },
 }
 </script>
